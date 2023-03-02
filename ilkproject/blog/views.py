@@ -13,9 +13,9 @@ def blogs(request):
 
 def blog_details(request, id):
     if id < 4:
-        z = "salam"
+        z = "salam: "
     else:
-        z = "sagol"
+        z = "sagol: "
     return render(request, "blog/blog-details.html", {
-        "id": z
+        "id": z+str(id)
     })
