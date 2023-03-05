@@ -6,11 +6,24 @@
 {%endblock%}
 
 {%block title%}
-    Home Page
+Home Page
 {%endblock%}
 
 {%block content%}
-    <h1>Home Page</h1>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-3">
+            {% include 'partials/_categories.html' %}
+        </div>
+        <div class="col-9">
+            <h1>Home Page</h1>
+            {% include 'blog/partials/_blog.html' %}
+            {% include 'blog/partials/_blog.html' %}
+            {% include 'blog/partials/_blog.html' %}
+            {% include 'blog/partials/_blog.html' %}
+        </div>
+    </div>
+</div>
 {%endblock%}
 
 {%block js_files%}
