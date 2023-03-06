@@ -1,5 +1,6 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
+from .models import Blog
 
 data = {
     "blogs": [
@@ -42,14 +43,14 @@ data = {
 # Create your views here.
 def index(request):
     context = {
-        "blogs": data["blogs"]
+        "blogs": Blog.objects.filter(is_home=True, is_active=True)
     }
     return render(request, "blog/index.html", context)
 
 
 def blogs(request):
     context = {
-        "blogs": data["blogs"]
+        "blogs": Blog.objects.filter(is_active=True)
     }
     return render(request, "blog/blogs.html", context)
 
@@ -63,8 +64,9 @@ def contact(request):
 
 
 def blog_details(request, id):
-    blogs = data["blogs"]
-    selectedBlog = [blog for blog in blogs if blog["id"]==id][0]
+    blog = Blog.objects.get(id=id)
+    # blogs = data["blogs"]
+    # selectedBlog = [blog for blog in blogs if blog["id"] == id][0]
     return render(request, "blog/blog-details.html", {
-        "blog": selectedBlog
+        "blog": blog
     })
