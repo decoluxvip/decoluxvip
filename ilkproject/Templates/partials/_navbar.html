@@ -1,16 +1,13 @@
 <nav class="navbar navbar bg-primary navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">My Project</a>
+        <a class="navbar-brand" href="{% url 'home'  %}">My Project</a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'home'  %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Blogs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Blog Details</a>
+                    <a class="nav-link" href="{% url 'blogs'  %}">Blogs</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -18,8 +15,8 @@
                         Others
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">About</a></li>
-                        <li><a class="dropdown-item" href="#">Contacts</a></li>
+                        <li><a class="dropdown-item" href="{% url 'about'  %}">About</a></li>
+                        <li><a class="dropdown-item" href="{% url 'contact'  %}">Contacts</a></li>
                     </ul>
                 </li>
             </ul>

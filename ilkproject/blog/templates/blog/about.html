@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block title %}
-    Home Page
+    About Page
 {% endblock %}
 
 {% block content %}
@@ -16,12 +16,7 @@
             {% include 'partials/_categories.html' %}
         </div>
         <div class="col-9">
-            <h1>Home Page</h1>
-            {% for blog in blogs %}
-                {% if blog.is_home and blog.is_active %}
-                    {% include 'blog/partials/_blog.html' %}
-                {% endif %}
-            {% endfor %}
+            <h1>About</h1>
         </div>
     </div>
 </div>

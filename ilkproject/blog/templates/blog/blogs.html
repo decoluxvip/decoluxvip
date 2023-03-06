@@ -1,15 +1,15 @@
 {% extends "base.html" %}
-{%load static%}
+{% load static %}
 
-{%block css_files%}
+{% block css_files %}
 <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
-{%endblock%}
+{% endblock %}
 
-{%block title%}
+{% block title %}
     Blog Page
-{%endblock%}
+{% endblock %}
 
-{%block content%}
+{% block content %}
 <div class="container mt-3">
     <div class="row">
         <div class="col-3">
@@ -17,16 +17,16 @@
         </div>
         <div class="col-9">
             <h1>Blog Page</h1>
-            {% include 'blog/partials/_blog.html' %}
-            {% include 'blog/partials/_blog.html' %}
-            {% include 'blog/partials/_blog.html' %}
-            {% include 'blog/partials/_blog.html' %}
+            {% for blog in blogs %}
+                {% if blog.is_active %}
+                    {% include 'blog/partials/_blog.html' %}
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 </div>
+{% endblock %}
 
-{%endblock%}
-
-{%block js_files%}
+{% block js_files %}
 <script src="{% static 'blog/js/script.js' %}"></script>
-{%endblock%}
+{% endblock %}
