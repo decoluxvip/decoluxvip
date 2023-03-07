@@ -26,10 +26,9 @@ def contact(request):
     return render(request, "blog/contact.html")
 
 
-def blog_details(request, id):
-    blog = Blog.objects.get(id=id)
-    # blogs = data["blogs"]
-    # selectedBlog = [blog for blog in blogs if blog["id"] == id][0]
+def blog_details(request, slugdata): # slugdata --> from urls.py
+    blog = Blog.objects.get(slug=slugdata)
     return render(request, "blog/blog-details.html", {
         "blog": blog
     })
+
