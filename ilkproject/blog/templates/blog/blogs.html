@@ -13,11 +13,13 @@
 <div class="container mt-3">
     <div class="row">
         <div class="col-3">
-            {% include 'partials/_categories.html' %}
+            {% for category in categories %}
+                {% include 'partials/_categories.html' %}
+            {% endfor %}
         </div>
         <div class="col-9">
             <h1>Blog Page</h1>
-            {% for blog in blogs %}
+            {% for blog in blogs %} <!-- blogs from views.py -->
                 {% if blog.is_active %}
                     {% include 'blog/partials/_blog.html' %}
                 {% endif %}

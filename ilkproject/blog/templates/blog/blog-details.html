@@ -13,7 +13,9 @@ Blog Details: {{ id }}
 <div class="container mt-3">
     <div class="row">
         <div class="col-3">
-            {% include 'partials/_categories.html' %}
+            {% for category in categories %}
+                {% include 'partials/_categories.html' %}
+            {% endfor %}
         </div>
         <div class="col-9">
             <div class="card mb-3">

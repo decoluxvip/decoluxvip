@@ -1,3 +1,4 @@
+from hashlib import sha256, md5
 from django.db import models
 from django.utils.text import slugify
 
@@ -12,7 +13,9 @@ class Blog(models.Model):
     slug = models.SlugField(blank=True, unique=True, db_index=True, editable=False)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(str(self.title), allow_unicode=True)
+        # md = md5((self.title+"lib").encode('utf-8'))
+        md2 = sha256((self.title+"lib").encode('utf-8'))
+        self.slug = slugify(md2.hexdigest())
         super().save(*args, **kwargs)
 
     def __str__(self):
@@ -24,7 +27,9 @@ class Category(models.Model):
     slug = models.SlugField(blank=True, unique=True, db_index=True, editable=False)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(str(self.name), allow_unicode=True)
+        # md = md5((self.name+"lib").encode('utf-8'))
+        md2 = sha256((self.name+"lib").encode('utf-8'))
+        self.slug = slugify(md2.hexdigest())
         super().save(*args, **kwargs)
 
     def __str__(self):
