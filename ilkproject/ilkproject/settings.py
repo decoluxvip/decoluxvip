@@ -28,8 +28,8 @@ DEBUG = True
 
 # ALLOWED_HOSTS = ['127.0.0.1','66.66.66.6','0.0.0.0','decoluxvip.asuscomm.com']
 # ALLOWED_HOSTS = ['127.0.0.1','66.66.66.6','0.0.0.0']
-# ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = []
 
 
 
@@ -127,6 +127,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
+
+MEDIA_ROOT = BASE_DIR / "uploads"
+MEDIA_URL = "/images/"
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
