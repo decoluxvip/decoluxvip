@@ -13,11 +13,11 @@
     <title>{% block title %} {% endblock %} | Django_Project</title>
 </head>
 <body>
-    {% include 'partials/_navbar.html' %}
-    {% block content %} {% endblock %}
+{% include 'partials/_navbar.html' %}
+{% block content %} {% endblock %}
 
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/base.js' %}"></script>
-    {% block js_files %} {% endblock %}
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/base.js' %}"></script>
+{% block js_files %} {% endblock %}
 </body>
 </html>

@@ -34,3 +34,5 @@ def blog_details(request, slugdata): # slugdata --> from urls.py
         "blog": blog
     })
 
+def blog_by_category(request, slugdata):
+    pass

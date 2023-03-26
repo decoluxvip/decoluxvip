@@ -1,18 +1,20 @@
-{% load static %}
-<div class="card mb-3">
-    <div class="row">
-        <div class="col-2">
-            <img src="{{ blog.image.url }}" class="img-fluid">  <!-- blog.image blog from index.html or blogs.html-->
-        </div>
-        <div class="col-10">
-            <div class="card-body p-1">
-                <h5 class="card-title ">
-                    <a href="{% url 'blog-details' blog.slug %}">
-                        {{ blog.title }}
-                    </a>
-                </h5>
-                <p class="card-text">{{ blog.description }}</p>
+{% for blog in blogs %} <!-- blogs from views.py -->
+    <div class="card mb-3">
+        <div class="row">
+            <div class="col-2">
+                <img src="{{ blog.image.url }}" class="img-fluid">
+                <!-- blog.image blog from index.html or blogs.html-->
+            </div>
+            <div class="col-10">
+                <div class="card-body p-1">
+                    <h5 class="card-title ">
+                        <a href="{% url 'blog-details' blog.slug %}">
+                            {{ blog.title }}
+                        </a>
+                    </h5>
+                    <p class="card-text">{{ blog.description|safe|striptags|slice:"0:300" }}</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+{% endfor %}

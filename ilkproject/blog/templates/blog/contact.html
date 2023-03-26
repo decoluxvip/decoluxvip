@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block css_files %}
-<link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
 {% endblock %}
 
 {% block title %}
@@ -10,20 +10,20 @@
 {% endblock %}
 
 {% block content %}
-<div class="container mt-3">
-    <div class="row">
-        <div class="col-3">
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-3">
                 {% for category in categories %}
                     {% include 'partials/_categories.html' %}
                 {% endfor %}
-        </div>
-        <div class="col-9">
-            <h1>Contact</h1>
+            </div>
+            <div class="col-9">
+                <h1>Contact</h1>
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}
 
 {% block js_files %}
-<script src="{% static 'blog/js/script.js' %}"></script>
+    <script src="{% static 'blog/js/script.js' %}"></script>
 {% endblock %}

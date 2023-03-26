@@ -1,22 +1,22 @@
 <nav class="navbar navbar bg-primary navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home'  %}">My Project</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Kitabxana</a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'home'  %}">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Ana Səhifə</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'blogs'  %}">Blogs</a>
+                    <a class="nav-link" href="{% url 'blogs' %}">Janrlar</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
-                        Others
+                        Digər
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{% url 'about'  %}">About</a></li>
-                        <li><a class="dropdown-item" href="{% url 'contact'  %}">Contacts</a></li>
+                        <li><a class="dropdown-item" href="{% url 'about' %}">Haqqında</a></li>
+                        <li><a class="dropdown-item" href="{% url 'contact' %}">Əlaqə</a></li>
                     </ul>
                 </li>
             </ul>

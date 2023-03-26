@@ -2,42 +2,35 @@
 {% load static %}
 
 {% block css_files %}
-<link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
 {% endblock %}
 
 {% block title %}
-Blog Details: {{ id }}
+    Blog Details: {{ id }}
 {% endblock %}
 
 {% block content %}
-<div class="container mt-3">
-    <div class="row">
-        <div class="col-3">
-            {% for category in categories %}
-                {% include 'partials/_categories.html' %}
-            {% endfor %}
-        </div>
-        <div class="col-9">
+    <div class="container mt-3">
+        <div class="row">
             <div class="card mb-3">
                 <div class="row">
                     <div class="col-2">
-                        <img src="{{blog.image.url }}" class="img-fluid">
+                        <img src="{{ blog.image.url }}" class="img-fluid">
                     </div>
                     <div class="col-10">
                         <div class="card-body p-1">
                             <h5 class="card-title ">
                                 {{ blog.title }}
                             </h5>
-                            <p class="card-text">{{ blog.description }}</p>
+                            <p class="card-text">{{ blog.description|safe }}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}
 
 {% block js_files %}
-<script src="{% static 'blog/js/script.js' %}"></script>
+    <script src="{% static 'blog/js/script.js' %}"></script>
 {% endblock %}

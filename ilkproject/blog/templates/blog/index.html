@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block css_files %}
-<link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
 {% endblock %}
 
 {% block title %}
@@ -10,27 +10,21 @@
 {% endblock %}
 
 {% block content %}
-<div class="container mt-3">
-    <div class="row">
-        <div class="col-3">
-            <div class="list-group">
-                {% for category in categories %}
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-3">
+                <div class="list-group">
                     {% include 'partials/_categories.html' %}
-                {% endfor %}
+                </div>
+            </div>
+            <div class="col-9">
+                <h1>Ana Səhifə</h1>
+                {% include 'blog/partials/_blog.html' %}
             </div>
         </div>
-        <div class="col-9">
-            <h1>Home Page</h1>
-            {% for blog in blogs %} <!-- blogs from views.py -->
-                {% if blog.is_home and blog.is_active %}
-                    {% include 'blog/partials/_blog.html' %}
-                {% endif %}
-            {% endfor %}
-        </div>
     </div>
-</div>
 {% endblock %}
 
 {% block js_files %}
-<script src="{% static 'blog/js/script.js' %}"></script>
+    <script src="{% static 'blog/js/script.js' %}"></script>
 {% endblock %}
